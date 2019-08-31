@@ -1,0 +1,29 @@
+I got this error when tried in Ubuntu 18
+
+$ spyder
+
+Traceback (most recent call last):
+
+File "/home/bz/anaconda3/bin/spyder", line 11, in
+
+sys.exit(main())
+
+File "/home/bz/anaconda3/lib/python3.7/site-packages/spyder/app/start.py", line 186, in main
+
+from spyder.app import mainwindow
+
+File "/home/bz/anaconda3/lib/python3.7/site-packages/spyder/app/mainwindow.py", line 90, in
+
+from qtpy import QtWebEngineWidgets # analysis:ignore
+
+File "/home/bz/anaconda3/lib/python3.7/site-packages/qtpy/QtWebEngineWidgets.py", line 22, in
+
+from PyQt5.QtWebEngineWidgets import QWebEnginePage
+
+ValueError: PyCapsule_GetPointer called with incorrect name
+
+and
+
+python3 -m pip install --upgrade PyQtWebEngine
+
+worked for me
